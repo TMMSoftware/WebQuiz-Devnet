@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata for character set and viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question</title>
+
+    <!-- Link to styles.css file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="start">
+
+     <!-- Header section -->
+     <header class="header">
+    </header>
+
+    <!-- Display the question number -->
+    <h1 class="question-number">Question {{ current_question_index + 1 }}</h1>
+    
+    <!-- Display the question text with safe filter to ensure HTML tags are not escaped -->
+    <p class="question-text">{{ question.question|safe }}</p><br><br>
+    
+    <!-- Display flashed messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-message animation center-text">
+                {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+    
+    <!-- "Submit Answer" button inside the form -->
+    <form id="questionForm" action="{{ url_for('display_question', question_index=current_question_index + 1) }}" method="POST">
+        {% for option in question.options %}
+
+            <!-- Display options with checkboxes -->
+            <label>
+                <div class="option-label">
+                    <input type="checkbox" name="user_answer" value="{{ option }}" >
+                    {{ option }}
+                </div>
+            </label><br>
+        {% endfor %}
+        
+        <!-- Navigation buttons container -->
+        <nav class="button-container button-container-center fixed-nav">
+            <input type="submit" class="button-style" value="Submit Answer">
+        </nav>
+    </form>
+    
+
+     <!-- Footer section -->
+     <footer class="footer">
+    </footer>
+</body>
+</html>
