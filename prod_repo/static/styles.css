@@ -1,0 +1,270 @@
+/* styles.css */
+
+/* General Styles */
+.welcome-text {
+    font-size: 23px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    margin-top: 20vh;
+}
+
+/* Applied to all <h1> elements in templates */
+h1 {
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Applied to all <p> elements in templates */
+p {
+    font-size: 23px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Consolidated All Button Styles */
+.button-style {
+    text-decoration: none; /* Remove underline from text */
+    border: none; /* Remove border */
+    color: white; /* Set text color to white */
+    background-color: #007BFF; /* Set background color to a specific shade of blue */
+    padding: 10px 20px; /* Add padding for spacing inside the button */
+    cursor: pointer; /* Change cursor to pointer when hovering over the button */
+    font-size: 23px; /* Set font size */
+    font-family: Arial, Helvetica, sans-serif; /* Set font family */
+    border-radius: 40px; /* Round the corners of the button */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; /* Add shadows to the button to create a layered and realistic visual effect */
+}
+
+/* Hover effects for all buttons */
+.button-style:hover{
+    color: #DDDDDD;
+    transform: scale(1.05);
+}
+
+/* Transition when leaving all buttons after hovering */
+.button-style {
+    transition: transform 0.3s;
+}
+
+/* Checkbox effects */
+input[type="checkbox"]:hover {
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.997);
+    background-color: white; /* Match with the form background color */
+}
+
+body {
+    position: relative;
+    margin:0; /* Reset for the body to get rid of default margin applied by the browser */
+    padding:0; /* Reset for the body to get rid of default margin applied by the browser */
+}
+
+/* Container CSS styles for buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 70px; /* Margin to create space between buttons and footer */
+}
+
+.fixed-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent; 
+    z-index: 2; /* To ensure the navigation stays on top of other content */
+}
+
+/* Styles for the "Submit Answer" button */
+.button-container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Styles for the "Next Question" button */
+.button-container-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.question-number{
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10vh;
+    margin-top: 5vh
+}
+
+.explanation-title{
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10vh;
+    margin-top: -4vh;
+}
+
+/* Styles for explanation content in explanation.html */
+.explanation-text {
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10vh;
+    margin-left: 20vh;
+    margin-right: 20vh;
+}
+
+/* Styles for content in result.html */
+.result-text{
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10vh;
+    margin-left: 20vh;
+    margin-right: 20vh;
+}
+
+/* Styles for code elements */
+code {
+    font-size: 15px;
+    font-family: Consolas, Monaco, 'Courier New', Courier, monospace; /* Set a monospace font */
+    background-color: #f9f9f9; /* Light background color for code blocks */
+    padding: 2px 4px; /* Padding around the code text */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Styles for correct and incorrect result messages */
+p.correct-result {
+    font-size: 22px;
+    color: green;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p.incorrect-result {
+    font-size: 22px;
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Styles for options text */
+.option-label {
+    font-size: 22px;
+    margin-left: 22vh;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;    
+}
+
+/* Styles for question text */
+p.question-text {
+    font-size: 22px;
+    margin-left: 20vh;
+    margin-top: 10vh;
+    margin-right: 20vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Styles for text alignment */
+.center-text {
+    text-align: center;
+}
+
+.right-text {
+    text-align: right;
+}
+
+.left-text {
+    text-align: left;
+}
+
+/* Syles for margin adjustments */
+.margin-right{ 
+    margin-right: 12vh;
+}
+
+
+/* Styles for footer */
+.footer {
+    background-color: #66a3ff;
+    color: #fff; /* Text color for the footer */
+    padding: 10px; /* Adjust padding as needed */
+    position: fixed; /* Fix the footer at the bottom of the page */
+    width: 100%; /* Full width of the page */
+    bottom: 0; /* Align at the bottom */
+}
+
+/* Styles for header */
+.header {
+    background-color: #66a3ff;
+    color: #fff; /* Text color for the header */
+    padding: 10px; /* Adjust padding as needed */
+    position: fixed; /* Fix the header at the top of the page */
+    width: 100%; /* Full width of the page */
+    top: 0; /* Align at the top */
+}
+
+/* Styles for the colored square container based on the result */
+.colored-square {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0; 
+    width: 100vw; 
+    height: 100vh;  
+    box-sizing: border-box;
+}
+
+.correct-square {
+    border: 1px solid green; /* Border line color when correct */
+    box-shadow: inset 0px 19px 10px 0px green; /* Glow effect */
+}
+
+.incorrect-square {
+    border: 1px solid red; /* Border line color when incorrect */
+    box-shadow: inset 0px 19px 10px 0px red; /* Glow effect */ 
+}
+
+/* Flash message styles */
+.flash-message {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 20px;
+    border-radius: 40px;
+    width: 300px;
+    position: fixed;  /* Remain visible regardless of scrolling */
+    top: 20px; /* Adjust distance from top */
+    left: 50%;
+    transform: translateX(-50%); /* Horizontally center flash message element (X axis)*/
+}
+
+.flash-message.animation{
+    animation: fadeOut 5s forwards; /* Fade out animation */
+    opacity: 5; /* Initial opacity */
+}
+
+.flash-message.error {
+    background-color: #f44336; /* Red color for error messages */
+    color: white;
+}
+
+.flash-message.success {
+    background-color: #4CAF50; /* Green color for success messages */
+    color: white;
+}
+
+.flash-message.info {
+    background-color: #2196F3; /* Blue color for informational messages */
+    color: white;
+}
+
+.flash-message.warning {
+    background-color: #ff9800; /* Orange color for warning messages */
+    color: white;
+}
+
+/* Key frames for fade out transition */
+@keyframes fadeOut {
+    from{
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+  
+
